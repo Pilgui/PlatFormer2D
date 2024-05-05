@@ -25,6 +25,7 @@ void Window::update() {
             if(event.type == sf::Event::Closed){
                 window.close();
             }
+            player.movePlayer();
         }
 
 
@@ -35,6 +36,15 @@ void Window::update() {
 
         window.clear(sf::Color::White);
         //draw
+        player.draw(window);
         window.display();
     }
+}
+
+int Window::getWindowWidth() {
+    return windowWidth;
+}
+
+int Window::getWindowHeight() {
+    return windowHeight;
 }
